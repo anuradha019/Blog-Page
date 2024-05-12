@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <div>Blog-logo</div>
+      <div>
+        <% if (currUser) { %>
+        <a href="/logout">Logout</a>
+        <a href="/posts/new">Create New Post</a>
+
+        <% }else{ %>
+        <a href="/signup">SignUp</a>
+        <a href="/signin">SignIn</a>
+        <% } %>
+      </div>
+    </header>
+    <h1>Blog Posts</h1>
+    <% for(post of posts) { %>
+    <div class="post">
+      <h3 class="user">Username : @<%= post.user.username %></h3>
+      <h4 class="content"><%= post.title %></h4>
+      <h4 class="content"><%= post.descreption %></h4>
+      <br />
+      <a href="/posts/<%=post._id%>">See in Detail</a>
+      <br />
+    </div>
+    <% } %>
+
+    <br />
+    <br />
+  </body>
+</html>
