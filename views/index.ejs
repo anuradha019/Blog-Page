@@ -31,7 +31,7 @@
     <% for(post of posts) { %>
       <div class="post">
          <h3 class="user">Username : @<%= post.user.username %></h3>
-         <h4 class="content"><%= post.title %></h4>
+         <h4 class="title"><%= post.title %></h4>
          <h4 class="detail"><%= post.descreption %></h4> <br /><br><br><br><br>
          <a href="/posts/<%=post._id%>">See in Detail</a> <br />
       </div>
