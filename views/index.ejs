@@ -12,9 +12,9 @@
   </head>
   <body>
     <header>
-      <div class="Nav-bar">
-      <h1 class="head">Rang-e-Zindagi</h1>
+      <div class="nav-bar">
       <div class="logo">Blog-logo</div>
+      <h1 class="head">Rang-e-Zindagi</h1>
       <div class="log">
         <% if (currUser) { %>
         <a href="/logout">Logout</a>
@@ -27,22 +27,21 @@
       </div>
     </div>
   </header>
+  <div class="card">
     <% for(post of posts) { %>
-    <div class="post">
-      <h3 class="user">Username : @<%= post.user.username %></h3>
-      <h4 class="content"><%= post.title %></h4>
-      <h4 class="content"><%= post.descreption %></h4>
-      <br />
-      <a href="/posts/<%=post._id%>">See in Detail</a>
-      <br />
-    </div>
+      <div class="post">
+         <h3 class="user">Username : @<%= post.user.username %></h3>
+         <h4 class="content"><%= post.title %></h4>
+         <h4 class="detail"><%= post.descreption %></h4> <br /><br><br><br><br>
+         <a href="/posts/<%=post._id%>">See in Detail</a> <br />
+      </div>
     <% } %>
-
+  </div>
     <br />
     <br />
-    <footer>
-      <div>
-       &copy; 2024 Anu's Coaching Classes | All rights Reserved
+  <footer>
+    <div>
+       &copy; 2024 Rang-e-Zindagi | All rights Reserved
       </div>
   </footer>
   </body>
