@@ -5,44 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rang-e-Zindagi</title>
     <link rel="stylesheet" href="/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" 
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <div class="nav-bar">
-      <div class="logo">Blog-logo</div>
-      <h1 class="head">Rang-e-Zindagi</h1>
-      <div class="log">
-        <% if (currUser) { %>
-        <a href="/logout">Logout</a>
-        <a href="/posts/new">Create New Post</a>
+        <div class="logo">Blog-logo</div>
+        <h1 class="head">Rang-e-Zindagi</h1>
+        <div class="log">
+          <% if (currUser) { %>
+          <a href="/logout">Logout</a>
+          <a href="/posts/new">Create New Post</a>
 
-        <% }else{ %>
-        <a href="/signup">SignUp</a>
-        <a href="/signin">SignIn</a>
+          <% }else{ %>
+          <a href="/signup">SignUp</a>
+          <a href="/signin">SignIn</a>
+          <% } %>
+        </div>
+      </div>
+    </header>
+    <div class="cards">
+      <div class="card">
+        <% for(post of posts) { %>
+        <div class="post">
+          <h3 class="user">Username : @<%= post.user.username %></h3>
+          <h4 class="title"><%= post.title %></h4>
+          <h4 class="detail"><%= post.descreption %></h4>
+          <a href="/posts/<%=post._id%>">See in Detail</a>
+        </div>
         <% } %>
       </div>
     </div>
-  </header>
-  <div class="card">
-    <% for(post of posts) { %>
-      <div class="post">
-         <h3 class="user">Username : @<%= post.user.username %></h3>
-         <h4 class="title"><%= post.title %></h4>
-         <h4 class="detail"><%= post.descreption %></h4> <br /><br><br><br><br>
-         <a href="/posts/<%=post._id%>">See in Detail</a> <br />
-      </div>
-    <% } %>
-  </div>
     <br />
     <br />
-  <footer>
-    <div>
-       &copy; 2024 Rang-e-Zindagi | All rights Reserved
-      </div>
-  </footer>
+    <footer>
+      <div>&copy; 2024 Rang-e-Zindagi | All rights Reserved</div>
+    </footer>
   </body>
 </html>
